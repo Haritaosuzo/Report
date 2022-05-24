@@ -1,5 +1,6 @@
 #  強化学習
 
+## 5/24
 前回はDQNを実装した。今回はPPOを実装する。ソースコードは以下。
 ```{r, class.source="fold-show"}
 import os
