@@ -95,3 +95,27 @@ Wed Jun  1 00:38:24 2022
 |    0   N/A  N/A     13510      G   /usr/bin/anydesk                   12MiB |
 +-----------------------------------------------------------------------------+
 ```
+
+##  Issac sim のインストール
+1.  OmniverseLauncherをダウンロードする。https://www.nvidia.com/en-us/omniverse
+2.  omniverse-launcher-linux.AppImageがダウンロードされるので、次のコマンドで実行権を与える。
+```
+$ sudo chmod +x omniverse-launcher-linux.AppImage
+```
+3.  実行してインストールする。
+```
+$ ./omniverse-launcher-linux.AppImage
+```
+4. キャッシュ・Nucleusをインストールする。
+
+
+##  ROS/ROS2ブリッジの有効化
+
+![Screenshot from 2022-06-01 01-28-08](https://user-images.githubusercontent.com/51279381/171226090-4776b5c4-8f3d-485f-bb95-cc13939a1d0b.png)
+Window > Extensions をクリック。
+![Screenshot from 2022-06-01 01-32-15](https://user-images.githubusercontent.com/51279381/171226699-113182a1-5c36-49cb-9a1c-4c97d61d282f.png)
+
+![Screenshot from 2022-06-01 01-32-25](https://user-images.githubusercontent.com/51279381/171226708-025666e4-bd86-489e-8134-4d79538bfb3d.png)
+Extensionsウィンドウの左上の検索欄にROSと入力する。\
+ROS、ROS2どちらか使用する方のBridgeのみ有効化する。
+![Screenshot from 2022-06-01 01-32-37](https://user-images.githubusercontent.com/51279381/171226715-5857cedf-5c9c-4d6f-9337-4bf4a90bc2f3.png)
