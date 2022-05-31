@@ -1,5 +1,15 @@
 #  強化学習
-
+## 5/31
+issac sim を動かしたが、GPU使用率が100%で重かった。要設定変更。\
+サンプルの実行、URDFモデルのインポートはできた。\
+リモートアクセス出来なかったため、画像の添付は後日。\
+![Screenshot from 2022-05-31 13-52-18](https://user-images.githubusercontent.com/51279381/171095398-30fb50f4-59c3-4fa7-8202-c7cb03fd5cde.png)
+PPOはProximal Policy Optimizationの頭文字である。和訳は近接ポリシーの最適化。
+####  デスクトップPCが遠隔操作出来なかった件
+↓リモートアクセスできなくなった際のログ
+![Screenshot from 2022-05-31 13-28-59](https://user-images.githubusercontent.com/51279381/171093502-414637ed-747a-4a9c-8516-0c7514ed8752.png)
+![Screenshot from 2022-05-31 13-40-59](https://user-images.githubusercontent.com/51279381/171094188-03411edd-ae0f-4e60-9f74-778cfeb605f2.png)
+5/25,5/26にクラッシュしていることがわかる。
 ## 5/24
 前回はDQNを実装した。今回はPPOを実装する。ソースコードは以下。
 ```{r, class.source="fold-show"}
