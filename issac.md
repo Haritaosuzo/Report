@@ -1,4 +1,4 @@
-#  Issac sim マニュアル
+#  Isaac sim マニュアル
 <div style="text-align: right;">
 中部大学 工学部 ロボット理工学科　村田 竜輔
 </div>
@@ -6,8 +6,8 @@
 <br>
 
 
-#  Issac simとは
-NVIDIA Omniverse Issac sim は、NVIDIAのロボットシミュレーションツールキットである。
+#  Isaac simとは
+NVIDIA Omniverse Isaac sim は、NVIDIAのロボットシミュレーションツールキットである。
 
 #  インストールガイド
 ##  動作環境
@@ -97,7 +97,7 @@ Wed Jun  1 00:38:24 2022
 +-----------------------------------------------------------------------------+
 ```
 
-##  Issac sim のインストール
+##  Isaac sim のインストール
 1.  OmniverseLauncherをダウンロードする。https://www.nvidia.com/en-us/omniverse
 2.  omniverse-launcher-linux.AppImageがダウンロードされるので、次のコマンドで実行権を与える。
 ```
@@ -120,3 +120,22 @@ Window > Extensions をクリック。
 Extensionsウィンドウの左上の検索欄にROSと入力する。\
 ROS、ROS2どちらか使用する方のBridgeのみ有効化する。
 ![Screenshot from 2022-06-01 01-32-37](https://user-images.githubusercontent.com/51279381/171226715-5857cedf-5c9c-4d6f-9337-4bf4a90bc2f3.png)
+
+
+#  ROSチュートリアル
+
+##  前提条件
+-  Isaac sim のインストール完了
+-  ROS のインストール完了
+-  Turtlebot3パッケージのビルド
+-  roscoreの実行
+
+##  Turtlebot3 URDFのインポート
+1.  Turtlebot3には.xacro形式のファイルが付属しているので、次のコマンドを実行してURDF形式に変換する。
+```
+$ rosrun xacro xacro -o <変換後ファイル名>.urdf <変換元ファイル名>.urdf.xacro
+```
+
+2.  Isaac sim のコンテンツタブ内のIsaac/Samples/ROS/Scenario/に移動しsimple_room_apriltag.usdを開く。
+3.  ウィンドウ上部のIsaac Utilsタブ内のURDF Importerを開く
+4.  ウィンドウ下部URDF Importerタブ内のImport URDFをクリックし、Turtlebot3のURDFファイルを選択する。
