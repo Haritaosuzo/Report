@@ -21,6 +21,7 @@ NVIDIA Omniverse Issac sim は、NVIDIAのロボットシミュレーション�
 | GPU    | GeForce RTX 2070                     | GeForce RTX 3080                     | RTX A6000                                                  | 
 | VRAM   | 8GB                                  | 10GB                                 | 48GB                                                       | 
 <br>
+
 ##  ドライバ
 IsaacSimの現在推奨されているドライバーバージョンは470.57.02以降である。\
 
