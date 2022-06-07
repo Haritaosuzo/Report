@@ -38,3 +38,55 @@ isaacgym内のpythonディレクトリに移動し、依存関係のパッケー
 $  pip install -e .
 ```
 #  Isaac gym ベンチマーク環境のインストール
+1.  https://github.com/NVIDIA-Omniverse/IsaacGymEnvs
+このサイトからクローンする。次のコマンドを実行。
+```
+$  git clone https://github.com/NVIDIA-Omniverse/IsaacGymEnvs.git
+```
+2.  クローンが出来たら、/IsaaGymEnvs/にディレクトリ移動し、次のコマンドを実行しインストールする。
+```
+$  pip install -e .
+```
+#  Isaac gym ベンチマーク環境の実行
+このパッケージには、予め環境やPPOのアルゴリズム等が実装されている。
+実装されている環境は、
+-  Allegro_hand
+-  Ant
+-  Anymal
+-  AnymalTerrain
+-  BallBalance
+-  Cartpole
+-  FrankaCabinet
+-  Humanoid
+-  HumanoidAMP
+-  HumanoidAMPHands
+-  Ingenuity
+-  Quadcopter
+-  ShadowHand
+-  ShadowHandOpenAI_FF
+-  ShadowHandOpenAI_LSTM
+-  ShadowHandTest
+-  Trifinger
+である。
+学習をする際は/IsaacGymEnvs/isaacgymenvs次のコマンドを実行。
+hogehogeには上記の環境名を入力。
+```
+$  python3 train.py task=hogehoge
+```
+ヘッドレスで実行する場合は次のコマンドを実行する。
+シミュレーションをGUI表示しないため、学習の実行速度を上げることができる。
+```
+$  python3 train.py task=hogehoge headless=True
+```
+学習中は/run/hogehoge/nnに定期的に学習モデルが保存される。途中で学習を停止させて、再度実行する場合は次のコマンドを実行する。hogehogeは環境名に置換。
+```
+$  python3 train.py task=hogehoge checkpoint=runs/hogehoge/nn/hogehoge.pth
+```
+学習済モデルの推論のみの実行は次のコマンドを実行。
+```
+$  python train.py task=hogehoge checkpoint=runs/hogehoge/nn/hogehoge.pth test=True
+```
+## 実行時のGif
+![Peek 2022-06-07 16-02](https://user-images.githubusercontent.com/51279381/172317312-3f956105-30d4-4a21-860f-71d62829e6cb.gif)
+![Peek 2022-06-07 16-04](https://user-images.githubusercontent.com/51279381/172317324-fe679e53-704b-4242-9cc3-d008e6c445ef.gif)
+
