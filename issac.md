@@ -123,19 +123,31 @@ ROS、ROS2どちらか使用する方のBridgeのみ有効化する。
 
 
 #  ROSチュートリアル
-
-##  前提条件
+##  2. Turtlebot3をインポートして動かす
+###  2.1 実行環境
+   -  Ubuntu20.04LTS
+   -  ROS Noetic
+   -  Turtlebot3 Waffle
+###  2.2 前提条件
 -  Isaac sim のインストール完了
 -  ROS のインストール完了
 -  Turtlebot3パッケージのビルド
 -  roscoreの実行
 
+###  2.3 目標
+Isaac simでTurtle bot3をセットアップし、操作できるようにする
+-  URDF Importerを用いて、Turtlebot3のモデルをインポート
+-  ROS BridgeとROS OmniGraphノードの紹介
+-  ROS Twist メッセージでロボットが動作するようにセットアップする
+
+
 ##  Turtlebot3 URDFのインポート
 1.  Turtlebot3には.xacro形式のファイルが付属しているので、次のコマンドを実行してURDF形式に変換する。
+多分、`turtlebot3/turtlebot3_description/urdf/turtlebot3_waffle.urdf.xacro`にあると思う。
 ```
 $ rosrun xacro xacro -o <変換後ファイル名>.urdf <変換元ファイル名>.urdf.xacro
 ```
 
-2.  Isaac sim のコンテンツタブ内のIsaac/Samples/ROS/Scenario/に移動しsimple_room_apriltag.usdを開く。
-3.  ウィンドウ上部のIsaac Utilsタブ内のURDF Importerを開く
-4.  ウィンドウ下部URDF Importerタブ内のImport URDFをクリックし、Turtlebot3のURDFファイルを選択する。
+1.  Isaac sim のコンテンツタブ内のIsaac/Samples/ROS/Scenario/に移動しsimple_room_apriltag.usdを開く。
+2.  ウィンドウ上部のIsaac Utilsタブ内のURDF Importerを開く
+3.  ウィンドウ下部URDF Importerタブ内のImport URDFをクリックし、Turtlebot3のURDFファイルを選択する。
