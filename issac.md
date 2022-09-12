@@ -4,6 +4,7 @@
 </div>
 <br>
 <br>
+日本語版が存在しなかったから一応作成したけど、ぶっちゃけ公式の英語版読んだ方がいい。Google翻訳かければ十分読みやすいし、動画付だし。
 
 
 #  Isaac simとは
@@ -23,7 +24,7 @@ NVIDIA Omniverse Isaac sim は、NVIDIAのロボットシミュレーション�
 <br>
 
 ##  ドライバ
-IsaacSimの現在推奨されているドライバーバージョンは470.57.02以降である。\
+IsaacSimの現在推奨されているドライバーバージョンは470.57.02以降である。
 
 <br>
 
@@ -124,30 +125,40 @@ ROS、ROS2どちらか使用する方のBridgeのみ有効化する。
 
 #  ROSチュートリアル
 ##  2. Turtlebot3をインポートして動かす
-###  2.1 実行環境
+##  2.1 実行環境
    -  Ubuntu20.04LTS
    -  ROS Noetic
    -  Turtlebot3 Waffle
-###  2.2 前提条件
+##  2.2 前提条件
 -  Isaac sim のインストール完了
 -  ROS のインストール完了
 -  Turtlebot3パッケージのビルド
 -  roscoreの実行
 
-###  2.3 目標
+##  2.3 目標
 Isaac simでTurtle bot3をセットアップし、操作できるようにする
 -  URDF Importerを用いて、Turtlebot3のモデルをインポート
 -  ROS BridgeとROS OmniGraphノードの紹介
 -  ROS Twist メッセージでロボットが動作するようにセットアップする
 
 
-##  Turtlebot3 URDFのインポート
+##  2.4  Turtlebot3 URDFのインポート
 1.  Turtlebot3には.xacro形式のファイルが付属しているので、次のコマンドを実行してURDF形式に変換する。
 多分、`turtlebot3/turtlebot3_description/urdf/turtlebot3_waffle.urdf.xacro`にあると思う。
 ```
 $ rosrun xacro xacro -o <変換後ファイル名>.urdf <変換元ファイル名>.urdf.xacro
 ```
 
-1.  Isaac sim のコンテンツタブ内のIsaac/Samples/ROS/Scenario/に移動しsimple_room_apriltag.usdを開く。
-2.  ウィンドウ上部のIsaac Utilsタブ内のURDF Importerを開く
-3.  ウィンドウ下部URDF Importerタブ内のImport URDFをクリックし、Turtlebot3のURDFファイルを選択する。
+2.  Isaac sim のコンテンツタブ内のIsaac/Environments/Simple_Room/simple_room.usdを探す。
+3.  新規ステージでsimple_room.usdをドラッグし、TransformプロパティのすべてのTranslateの数値をゼロにして原点に配置する。部屋の中のテーブルを見るには、少しズームインするといい。
+4.  ウィンドウ上部のIsaac Utilsタブ内のWorkflows/URDF Importerを開く。
+5.  URDF ImporterウィンドウのImport Optionセクションで既存の環境を維持するためにClean Stageのチェックを外し、Turtlebot3はモバイルロボットなのでベースリンクの修正をオフにし、ジョイントドライブタイプを速度に変更する。
+6.  Importセクション内で、まずInput Fileでインポートする URDF ファイルを見つける。このImportボタンは、ファイルを選択した後にのみ有効になる。
+7.  アセットが Omniverse Kit にインポートされると、アセットの .usd バージョンのコピーが自動的に保存される。.urdf ファイルが配置されているフォルダーとは異なる場合は、アセットを保存するフォルダーを出力ディレクトリに指定する。.urdfファイルに一致するフォルダー名が指定されたディレクトリに作成され、新しく作成されたフォルダー内に.usdファイルが作成されます。
+8.  Stageタブ内の空のスペースをクリックしてステージ上のすべての選択を解除するか、ツリーで/Worldを選択する。そうしないと、Turtlebot をツリー上のランダム オブジェクトの子としてインポートしてしまう可能性がある。
+9.  Importをクリックしてインポートする。
+10.  Turtlebotがインポートされると、テーブル上に表示されるので床の真上に移動させる。
+11.  Playを押すとTurtlebotが床の上に落ちる。
+
+##  2.5  ロボットを操縦する
+1.  
